@@ -19,8 +19,8 @@ gulp.task('browserSync', () => {
   })
 })
 
-gulp.task('watch', gulp.parallel('browserSync', 'sass', function () {
-  gulp.watch('app/scss/**/*.scss', gulp.series('sass')); 
-  gulp.watch('app/*.html', browserSync.reload); 
-  gulp.watch('app/js/**/*.js', browserSync.reload); 
+gulp.task('watch', gulp.parallel('browserSync', 'sass', () => {
+  gulp.watch('app/scss/**/*.scss', gulp.series('sass'))
+  gulp.watch('app/*.html').on('change', browserSync.reload)
+  gulp.watch('app/js/**/*.js').on('change', browserSync.reload)
 }))
