@@ -1,3 +1,116 @@
+html {
+  font-family: Open Sans;
+}
+
 body {
-  background-color: white
+  background-color: white;
+  margin: 0;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #f1f1f1;
+  padding: 20px 10px;
+}
+
+.header span {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header span.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.teamHeader {
+  text-align: center;
+  width: 100%;
+  color: #452e76;
+  font-size: 3em;
+}
+
+.meetTeam {
+  padding-top: 1px;
+  position: relative;
+  min-height: 200px;
+  background-repeat: repeat;
+  text-align: center;
+}
+
+.meetTeam::after {
+  content: "";
+  background-image: url("../assets/bg.png");
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
+}
+@media screen and (min-width: 900px) {
+  body {
+
+  }
+}
+
+#displayTeam {
+  text-align: center;
+  display: inline-block;
+  max-width: 1400px;
+}
+
+.person {
+  display: inline-block;
+  margin: 40px;
+  cursor: pointer;
+}
+
+.person .description {
+  display: grid;
+  text-align: center;
+}
+.person .description > span {
+  grid-template-columns: repeat(1,1fr);
+}
+
+.personName {
+  font-size: 1.15em;
+  color: #452e76;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.personJob {
+  color: #48c3dc;
+  width: 190px;
+  font-size: 0.85em;
+}
+
+.personLocation {
+  color: #808080;
+  font-size: 0.85em;
+  margin-top: 5px;
+}
+
+.avatarBox {
+  position: relative;
+}
+
+.avatarBox img {
+  height: auto;
+  padding: 5px;
+}
+
+.avatarBox .messageButton {
+  position: absolute;
+  top: 4px;
+  right: 4px;
 }

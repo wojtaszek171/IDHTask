@@ -1,19 +1,46 @@
 <!doctype html>
 
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <title>IDHTask</title>
   <meta name="description" content="IDHTask">
   <meta name="author" content="SitePoint">
-
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
-
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.min.js"></script>
 </head>
+<script id="team-template" type="text/x-handlebars-template">
+  {{#each this}}
+    <div class="person">
+      <div class="avatarBox">
+        <img src="./assets/{{this.avatar}}"/>
+        <div class="messageButton"><img src="./assets/mail icon.png"/></div>
+      </div>
+      <div class="description">
+        <span class="personName">{{this.name}}</span>
+        <span class="personJob">{{this.job}}</span>
+        <span class="personLocation">{{this.location}}</span>
+      </div>
+    </div>
+  {{/each}}
+</script>
 
-    <body>
-    Tu będzie slider
-    </body>
+<body>
+  <div class="header">
+    <span class="logo">Template header</span>
+  </div>
+  <div class="meetTeam">
+    <h2 class="teamHeader">Meet our team</h2>
+    <div id="displayTeam"></div>
+  </div>
+  <div>
+    Tu slider
+  </div>
+  <div id="footer">
+      <script src="js/functions.js"></script>
+  </div>
+</body>
+
 </html>
