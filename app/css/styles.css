@@ -113,7 +113,8 @@ body {
         font-size: 3em;
         font-weight: 100; }
       .sliderEl .slideContent .sliderDescrBox .sliderName {
-        font-size: 5em; }
+        font-size: 4.3em;
+        font-weight: bold; }
 
 .swiper-button-next:after, .swiper-button-prev:after {
   color: white;
@@ -140,3 +141,21 @@ body {
       font-size: 1em; }
     .sliderEl .slideContent .sliderDescrBox .sliderName {
       font-size: 2em; } }
+
+.button-prev, .button-next {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  z-index: 1; }
+
+.button-prev {
+  left: 30px; }
+  .button-prev img {
+    height: 50px; }
+
+.button-next {
+  right: 30px; }
+  .button-next img {
+    height: 50px; }

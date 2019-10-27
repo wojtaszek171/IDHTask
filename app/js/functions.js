@@ -83,8 +83,8 @@ var mySwiper = new Swiper('.swiper-container', {
     },
 
     navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
+        nextEl: '.button-next',
+        prevEl: '.button-prev',
     }
 })
 

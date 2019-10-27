@@ -146,7 +146,8 @@ body {
       }
       
       .sliderName {
-        font-size: 5em;
+        font-size: 4.3em;
+        font-weight: bold;
       }
     }
   }
@@ -194,4 +195,29 @@ body {
     }
   }
 
+}
+
+.button-prev, .button-next {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  z-index: 1;
+}
+
+.button-prev {
+  left: 30px;
+
+  img {
+    height: 50px;
+  }
+}
+
+.button-next {
+  right: 30px;
+
+  img {
+    height: 50px;
+  }
 }
