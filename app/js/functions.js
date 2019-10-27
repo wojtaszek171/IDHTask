@@ -1,14 +1,4 @@
-Handlebars.registerHelper('eachInMap', function (map, block) {
-  var out = '';
-  Object.keys(map).map(function (prop) {
-  out += block.fn({ key: prop, value: map[prop] });
-  });
-  return out;
-});
-
-var source = document.getElementById('team-template').innerHTML;
-var template = Handlebars.compile(source);
-var html = template([
+const team = [
     {
         name: 'Basia Sołtysińska',
         job: 'Founder',
@@ -69,6 +59,38 @@ var html = template([
         location: 'Warsaw',
         avatar: 'avatar1.png'
     }
-]);
+]
+
+var source = document.getElementById('team-template').innerHTML;
+var template = Handlebars.compile(source);
+var html = template(team);
 
 document.getElementById('displayTeam').innerHTML = html;
+
+var source = document.getElementById('swiper-template').innerHTML;
+var template = Handlebars.compile(source);
+var html = template(team);
+
+document.getElementById('swiperSlidesContainer').innerHTML = html;
+
+var mySwiper = new Swiper('.swiper-container', {
+    autoHeight: true,
+    direction: 'horizontal',
+    loop: true,
+
+    pagination: {
+        el: '.swiper-pagination',
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    }
+})
+
+function goToSlide (id) {
+    mySwiper.slideTo(id)
+    document.getElementById('sliderSwiper').scrollIntoView({
+        behavior: 'smooth'
+    });
+}

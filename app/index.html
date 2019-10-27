@@ -9,19 +9,40 @@
   <meta name="description" content="IDHTask">
   <meta name="author" content="SitePoint">
   <link rel="stylesheet" href="css/styles.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.4.2/handlebars.min.js"></script>
+  <script src="libs/handlebars.min.js"></script>
+  <link rel="stylesheet" href="libs/swiper.css">
+  <link rel="stylesheet" href="libs/swiper.min.css">
+  <script src="libs/swiper.js"></script>
+  <script src="libs/swiper.min.js"></script>
 </head>
+
 <script id="team-template" type="text/x-handlebars-template">
   {{#each this}}
-    <div class="person">
+    <div class="person" onClick="goToSlide({{@index}}+1)">
       <div class="avatarBox">
-        <img src="./assets/{{this.avatar}}"/>
+        <img class="avatarImg" src="./assets/{{this.avatar}}"/>
         <div class="messageButton"><img src="./assets/mail icon.png"/></div>
       </div>
       <div class="description">
-        <span class="personName">{{this.name}}</span>
-        <span class="personJob">{{this.job}}</span>
-        <span class="personLocation">{{this.location}}</span>
+        <div class="personName">{{this.name}}</div>
+        <div class="personJob">{{this.job}}</div>
+        <div class="personLocation">{{this.location}}</div>
+      </div>
+    </div>
+  {{/each}}
+</script>
+
+<script id="swiper-template" type="text/x-handlebars-template">
+  {{#each this}}
+    <div class="swiper-slide">
+      <div class="sliderEl">
+        <img class="sliderBg" src="assets/slidebg.png" />
+        <div class="slideContent">
+          <div class="sliderDescrBox">
+              <span class="sliderJob">{{this.job}}</span>
+              <span class="sliderName">{{this.name}}</span>
+          </div>
+        </div>   
       </div>
     </div>
   {{/each}}
@@ -35,11 +56,27 @@
     <h2 class="teamHeader">Meet our team</h2>
     <div id="displayTeam"></div>
   </div>
-  <div>
-    Tu slider
+  <div id="sliderSwiper">
+    <div class="swiper-container">
+      <!-- Additional required wrapper -->
+      <div id="swiperSlidesContainer" class="swiper-wrapper">
+        <!-- Slides -->
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+
+      <!-- If we need navigation buttons -->
+      <div class="swiper-button-prev">
+      </div>
+      <div class="swiper-button-next">
+      </div>
+
+      <!-- If we need scrollbar -->
+      <div class="swiper-scrollbar"></div>
+    </div>
   </div>
   <div id="footer">
-      <script src="js/functions.js"></script>
+    <script src="js/functions.js"></script>
   </div>
 </body>
 

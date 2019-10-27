@@ -11,29 +11,22 @@ body {
   overflow: hidden;
   background-color: #f1f1f1;
   padding: 20px 10px;
-}
 
-.header span {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 12px;
-  text-decoration: none;
-  font-size: 18px;
-  line-height: 25px;
-  border-radius: 4px;
-}
+  span {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
 
-.header span.logo {
-  font-size: 25px;
-  font-weight: bold;
-}
-
-.teamHeader {
-  text-align: center;
-  width: 100%;
-  color: #452e76;
-  font-size: 3em;
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+    }
+  }
 }
 
 .meetTeam {
@@ -42,22 +35,12 @@ body {
   min-height: 200px;
   background-repeat: repeat;
   text-align: center;
-}
 
-.meetTeam::after {
-  content: "";
-  background-image: url("../assets/bg.png");
-  opacity: 0.4;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  position: absolute;
-  z-index: -1;   
-}
-@media screen and (min-width: 900px) {
-  body {
-
+  .teamHeader {
+    text-align: center;
+    width: 100%;
+    color: #452e76;
+    font-size: 3em;
   }
 }
 
@@ -68,7 +51,7 @@ body {
 }
 
 .person {
-  display: inline-block;
+  display: inline-table;
   margin: 40px;
   cursor: pointer;
 }
@@ -76,9 +59,23 @@ body {
 .person .description {
   display: grid;
   text-align: center;
+  max-width: 190px;
+  
+  grid-template-columns: repeat(1, 1fr);
+
 }
+
+@media all and (-ms-high-contrast:none) {
+  .grid-container {
+    display: -ms-grid;
+    -ms-grid-columns: 1fr;
+    -ms-grid-rows: 1fr 1fr 1fr;
+  }
+}
+
 .person .description > span {
-  grid-template-columns: repeat(1,1fr);
+  -ms-grid-rows: 1fr 1fr 1fr;
+  grid-template-rows: 150px 50px;
 }
 
 .personName {
@@ -90,7 +87,6 @@ body {
 
 .personJob {
   color: #48c3dc;
-  width: 190px;
   font-size: 0.85em;
 }
 
@@ -102,15 +98,100 @@ body {
 
 .avatarBox {
   position: relative;
+
+  .avatarImg {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  .messageButton {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
 }
 
-.avatarBox img {
-  height: auto;
-  padding: 5px;
+.sliderEl {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+
+  .sliderBg {
+    width: 100%;
+    background-image: url('/app/assets/slidebg.png');
+  }
+
+  .slideContent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .sliderDescrBox {
+      display: table-cell;
+      margin: 0 auto;
+      padding: 20px;
+      border: 4px rgba(255, 255, 255, 0.2);
+      border-style: dashed;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    
+      .sliderJob {
+        font-size: 3em;
+        font-weight: 100;
+      }
+      
+      .sliderName {
+        font-size: 5em;
+      }
+    }
+  }
 }
 
-.avatarBox .messageButton {
-  position: absolute;
-  top: 4px;
-  right: 4px;
+.swiper-button-next:after, .swiper-button-prev:after {
+  color: white;
+  font-weight: bold;
+}
+
+.swiper-container {
+  max-width: 1400px;
+  height: 600px;
+}
+
+.swiper-slide {
+  display: table;
+
+  span {
+    display: block;
+    color: white;
+    text-shadow: 2px 3px 3px rgba(0,0,0,0.3);
+  }
+}
+
+#footer {
+  min-height: 100px;
+}
+
+@media screen and (max-width: 900px) {
+
+  .sliderEl {
+    .slideContent {
+      .sliderDescrBox {
+        width: 80%;
+
+        .sliderJob {
+          font-size: 1em;
+        }
+        
+        .sliderName {
+          font-size: 2em;
+        }
+      }
+    }
+  }
+
 }
