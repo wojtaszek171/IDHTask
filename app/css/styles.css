@@ -1,11 +1,13 @@
 html {
-  font-family: Open Sans; }
-
-body {
-  background-color: white;
-  margin: 0; }
+  font-family: Open Sans;
+  height: 100%; }
+  html body {
+    background-color: white;
+    margin: 0;
+    height: 100%; }
 
 .meetTeam {
+  height: 100%;
   padding-top: 1px;
   position: relative;
   min-height: 200px;
@@ -16,6 +18,17 @@ body {
     width: 100%;
     color: #452e76;
     font-size: 3em; }
+
+.meetTeam::after {
+  content: "";
+  background-image: url("../assets/bg.png");
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1; }
 
 #displayTeam {
   text-align: center;
