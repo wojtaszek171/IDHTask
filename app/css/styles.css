@@ -5,23 +5,6 @@ body {
   background-color: white;
   margin: 0; }
 
-.header {
-  overflow: hidden;
-  background-color: #f1f1f1;
-  padding: 20px 10px; }
-  .header span {
-    float: left;
-    color: black;
-    text-align: center;
-    padding: 12px;
-    text-decoration: none;
-    font-size: 18px;
-    line-height: 25px;
-    border-radius: 4px; }
-    .header span .logo {
-      font-size: 25px;
-      font-weight: bold; }
-
 .meetTeam {
   padding-top: 1px;
   position: relative;
@@ -39,41 +22,36 @@ body {
   display: inline-block;
   max-width: 1400px; }
 
-.person {
-  display: inline-table;
-  margin: 40px;
-  cursor: pointer; }
-
-.person .description {
-  display: grid;
-  text-align: center;
-  max-width: 190px;
-  grid-template-columns: repeat(1, 1fr); }
-
 @media all and (-ms-high-contrast: none) {
   .grid-container {
     display: -ms-grid;
     -ms-grid-columns: 1fr;
     -ms-grid-rows: 1fr 1fr 1fr; } }
 
-.person .description > span {
-  -ms-grid-rows: 1fr 1fr 1fr;
-  grid-template-rows: 150px 50px; }
-
-.personName {
-  font-size: 1.15em;
-  color: #452e76;
-  margin-top: 10px;
-  margin-bottom: 10px; }
-
-.personJob {
-  color: #48c3dc;
-  font-size: 0.85em; }
-
-.personLocation {
-  color: #808080;
-  font-size: 0.85em;
-  margin-top: 5px; }
+.person {
+  display: inline-table;
+  margin: 40px;
+  cursor: pointer; }
+  .person .description {
+    display: grid;
+    text-align: center;
+    max-width: 190px;
+    grid-template-columns: repeat(1, 1fr); }
+    .person .description > span {
+      -ms-grid-rows: 1fr 1fr 1fr;
+      grid-template-rows: 150px 50px; }
+    .person .description .personName {
+      font-size: 1.15em;
+      color: #452e76;
+      margin-top: 10px;
+      margin-bottom: 10px; }
+    .person .description .personJob {
+      color: #48c3dc;
+      font-size: 0.85em; }
+    .person .description .personLocation {
+      color: #808080;
+      font-size: 0.85em;
+      margin-top: 5px; }
 
 .avatarBox {
   position: relative; }
@@ -91,8 +69,7 @@ body {
   vertical-align: middle;
   text-align: center; }
   .sliderEl .sliderBg {
-    width: 100%;
-    background-image: url("/app/assets/slidebg.png"); }
+    width: 100%; }
   .sliderEl .slideContent {
     position: absolute;
     top: 0;
@@ -134,14 +111,6 @@ body {
 #footer {
   min-height: 100px; }
 
-@media screen and (max-width: 900px) {
-  .sliderEl .slideContent .sliderDescrBox {
-    width: 80%; }
-    .sliderEl .slideContent .sliderDescrBox .sliderJob {
-      font-size: 1em; }
-    .sliderEl .slideContent .sliderDescrBox .sliderName {
-      font-size: 2em; } }
-
 .button-prev, .button-next {
   position: absolute;
   top: 50%;
@@ -159,3 +128,58 @@ body {
   right: 30px; }
   .button-next img {
     height: 50px; }
+
+@media screen and (max-width: 900px) {
+  .person {
+    width: 130px;
+    margin: 20px; }
+  .sliderEl .slideContent .sliderDescrBox .sliderJob {
+    font-size: 1em; }
+  .sliderEl .slideContent .sliderDescrBox .sliderName {
+    font-size: 2em; } }
+
+.overlay {
+  height: 100%;
+  width: 100%;
+  visibility: hidden;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow-x: hidden; }
+  .overlay .overlay-content {
+    display: table-cell;
+    margin: 0 auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center; }
+  .overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #ffffff;
+    display: block;
+    /* Display block instead of inline */
+    transition: 0.3s;
+    /* Transition effects on hover (color) */ }
+  .overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    mix-blend-mode: difference;
+    z-index: 1; }
+
+/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px; }
+  .overlay .closebtn {
+    font-size: 40px;
+    top: 15px;
+    right: 35px; } }

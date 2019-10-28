@@ -89,8 +89,14 @@ var mySwiper = new Swiper('.swiper-container', {
 })
 
 function goToSlide (id) {
-    mySwiper.slideTo(id)
-    document.getElementById('sliderSwiper').scrollIntoView({
-        behavior: 'smooth'
-    });
+    openNav()
+    mySwiper.slideTo(id, 0)
+}
+
+function openNav() {
+    document.getElementById("myNav").style.visibility = "visible";
+}
+
+function closeNav() {
+    document.getElementById("myNav").style.visibility = "hidden";
 }

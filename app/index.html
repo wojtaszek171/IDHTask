@@ -18,7 +18,7 @@
 
 <script id="team-template" type="text/x-handlebars-template">
   {{#each this}}
-    <div class="person" onClick="goToSlide({{@index}}+1)">
+    <div class="person" onclick="goToSlide({{@index}}+1)">
       <div class="avatarBox">
         <img class="avatarImg" src="./assets/{{this.avatar}}"/>
         <div class="messageButton"><img src="./assets/mail icon.png"/></div>
@@ -36,7 +36,7 @@
   {{#each this}}
     <div class="swiper-slide">
       <div class="sliderEl">
-        <img class="sliderBg" src="assets/slidebg.png" />
+        <img class="sliderBg" src="./assets/slidebg.png" />
         <div class="slideContent">
           <div class="sliderDescrBox">
               <span class="sliderJob">{{this.job}}</span>
@@ -49,21 +49,25 @@
 </script>
 
 <body>
-  <div class="header">
-    <span class="logo">Template header</span>
-  </div>
   <div class="meetTeam">
     <h2 class="teamHeader">Meet our team</h2>
     <div id="displayTeam"></div>
   </div>
-  <div id="sliderSwiper">
-    <div class="swiper-container">
-      <div id="swiperSlidesContainer" class="swiper-wrapper">
+  <div id="myNav" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  
+    <div class="overlay-content">
+      <div id="sliderSwiper">
+        <div class="swiper-container">
+          <div id="swiperSlidesContainer" class="swiper-wrapper">
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="button-prev"><img src="./assets/angle-left.png"/></div>
+          <div class="button-next"><img src="./assets/angle-right.png"/></div>
+        </div>
       </div>
-      <div class="swiper-pagination"></div>
-      <div class="button-prev"><img src="./assets/angle-left.png"/></div>
-      <div class="button-next"><img src="./assets/angle-right.png"/></div>
     </div>
+  
   </div>
   <div id="footer">
     <script src="js/functions.js"></script>
