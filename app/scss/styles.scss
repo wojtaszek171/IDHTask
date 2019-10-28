@@ -159,6 +159,7 @@ body {
   color: white;
   font-weight: bold;
   z-index: 1;
+  padding: 10px;
 }
 
 .button-prev {
@@ -185,6 +186,8 @@ body {
   .sliderEl {
     .slideContent {
       .sliderDescrBox {
+        padding: 5px;
+
         .sliderJob {
           font-size: 1em;
         }
@@ -194,6 +197,10 @@ body {
         }
       }
     }
+  }
+
+  .button-prev, .button-next {
+    top: 40%;
   }
 }
 
@@ -218,15 +225,14 @@ body {
     transform: translate(-50%, -50%);
     width: 100%;
     text-align: center;
-  }  
-
+  }
+  
   a {
     padding: 8px;
     text-decoration: none;
     font-size: 36px;
     color: #ffffff;
-    display: block; /* Display block instead of inline */
-    transition: 0.3s; /* Transition effects on hover (color) */
+    display: block;
   }
 
   .closebtn {
@@ -240,12 +246,8 @@ body {
 
 }
 
-/* When the height of the screen is less than 450 pixels, change the font-size of the links and position the close button again, so they don't overlap */
 @media screen and (max-height: 450px) {
   .overlay {
-    a {
-      font-size: 20px
-    }
     .closebtn {
       font-size: 40px;
       top: 15px;
